@@ -1,0 +1,17 @@
+
+.img-placeholder {
+    height: 150px;
+    border-radius: 5px;
+    color: #757575;
+}
+.size{
+    width:300px;
+    font-size: larger;
+}
+.mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;
+    
+}
+.mat-radio-group, .mat-radio-button,.gen{
+    color:rgb(136, 120, 120)
+}

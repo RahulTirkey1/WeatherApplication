@@ -1,0 +1,12 @@
+<div  *ngIf="loaded1" class="font">
+    <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px">
+        <div fxLayout fxLayoutAlign="center center">
+            <img [src]="urlImage+allData.image" class="imagecontainer mat-elevation-z3">
+        </div>
+        <div fxLayout fxLayoutAlign="center center">
+            <h1>Welcome {{allData.firstName}}</h1>
+        </div>
+        <button mat-raised-button color="warn" (click)="weather()">Show Weather</button>
+    </div>
+
+</div>

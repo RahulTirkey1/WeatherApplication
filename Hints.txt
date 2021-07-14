@@ -1,0 +1,19 @@
+						Description:-
+-----------------------------------------------------------------------------------------------
+Guidelines to run the project:-
+
+1)Firstly clone this repository using "git clone https://github.com/RahulTirkey1/Filer.git"
+2)Open Command Terminal and enter into "user-reg" folder, then type "npm install" to install all the dependencies
+3)Simultaneously Open "Loop" folder, then type "npm install" to install all the dependencies.
+4)In "user-reg" folder type "ng serve" in the command prompt to run the angular application.
+5)In "Loop" folder type "node ." in the command prompt to run the Loopback application.
+
+Technologies Used:-
+1)Angular 11.x
+2)LoopBack 3.x(Used for Backend)
+3)Angular Material 11.x
+4)Flex Layout Module (Used for flex styling, it is a custom Angular styling module)
+5)Indian Postal Code API for fetch state and countries by providing Pin Code
+6)OpenWeatherMap Api to get the temperature,humidity and weather details of a particular city or state.
+
+ 

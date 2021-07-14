@@ -1,0 +1,23 @@
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    box-sizing: border-box;
+}
+
+.full-w {
+    width: 100%;
+}
+
+.imagecontainer{
+    height:200px;
+    width:250px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+.font{
+    margin-top: 3rem;
+}

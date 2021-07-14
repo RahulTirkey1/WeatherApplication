@@ -1,0 +1,70 @@
+<div class="full-w" [formGroup]="registerForm" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" class="font">
+
+            <div fxLayout="column" fxLayoutAlign="center center" class="mat-elevation-z3 img-placeholder" fxFlex="140px"
+                (click)="imgOne.click()" >
+                    <ng-container *ngIf="!image?.value">
+                <button type="button" mat-icon-button>
+                    <mat-icon>add_photo_alternate</mat-icon>
+                </button>
+                <p>ADD IMAGE</p>
+                </ng-container>
+                <img [src]="allImages" *ngIf="allImages" class="imagecontainer">
+                <input hide #imgOne (change)="onSelectFile($event)" type="file" accept="image/*" style="visibility:hidden;">
+            </div>
+            
+            <div fxLayout fxLayoutAlign="center center" fxFlex="100" fxLayoutGap="20px" fxLayout.xs="column">
+                <mat-form-field class="size">
+                    <mat-label>FirstName</mat-label>
+                    <input matInput formControlName="firstName" [max]="'15'" required>
+                </mat-form-field>
+                <mat-form-field class="size">
+                    <mat-label>LastName</mat-label>
+                    <input matInput formControlName="lastName" max="15" required>
+                </mat-form-field>
+            </div>
+            <div class="size">
+                <mat-label class="gen">Gender</mat-label>
+                <mat-radio-group formControlName="gender" fxLayout fxLayout.xs="column">
+                    <mat-radio-button value="male" style="padding-left: 1rem;">Male</mat-radio-button>
+                    <mat-radio-button value="female">Female</mat-radio-button>
+                    <mat-radio-button value="others">Others</mat-radio-button>
+                </mat-radio-group>
+            </div>
+            <div fxLayout fxLayoutAlign="center center" fxLayoutGap="20px" fxLayout.xs="column">
+                <mat-form-field class="size" >
+                    <mat-label>Date Of Birth</mat-label>
+                    <input matInput [matDatepicker]="picker" formControlName="dob" [id]="datePickerId" required [max]="date">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker (closed)="calculateAge()"></mat-datepicker>
+                </mat-form-field>
+                <mat-form-field class="size"> 
+                    <mat-label>Age</mat-label>
+                    <input matInput formControlName="age" readonly>
+                </mat-form-field>
+            </div>
+            <div fxLayout fxLayoutAlign="center center" fxLayoutGap="20px" fxLayout.xs="column">
+                <mat-form-field class="size">
+                    <mat-label>Address Line 1</mat-label>
+                    <input matInput formControlName="address1" required>
+                </mat-form-field>
+                <mat-form-field class="size">
+                    <mat-label>Address Line 2</mat-label>
+                    <input matInput formControlName="address2">
+                </mat-form-field>
+            </div>
+            <mat-form-field class="size">
+                <mat-label>Phone Number</mat-label>
+                <input matInput formControlName="phoneNumber" type="number" required>
+            </mat-form-field>
+            <div fxLayoutAlign="center center" fxLayoutGap="10px" fxLayout.xs="column">
+                <mat-form-field class="size">
+                    <mat-label>Pin Code</mat-label>
+                    <input matInput formControlName="pinCode" type="number" required (keyup)="wait=false">
+                </mat-form-field>
+                <button mat-raised-button type="button" (click)="districts()">Check</button>
+            </div>
+            <button mat-raised-button type="button" color="warn" [disabled]="registerForm.invalid || !wait" (click)="register()">Register</button>
+        
+</div>
+<br>
+<!--{{registerForm.value |json}} -->
